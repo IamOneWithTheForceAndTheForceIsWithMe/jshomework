@@ -1,18 +1,18 @@
 let array = new Array();
 document.write('A square equation has appearance as a*x^2 + b*x + c = 0' +'<br>');
-array[0] = parseFloat(prompt('Enter a'));
-array[1] = parseFloat(prompt('Enter b'));
-array[2] = parseFloat(prompt('Enter c'));
+array[0] = parseFloat(prompt('Write coeficient a'));
+array[1] = parseFloat(prompt('Write coeficient b'));
+array[2] = parseFloat(prompt('Write coeficient c'));
 
 function calculateSquareEquationRoots(array) {
-    let d = (calculateDiscriminant(array));
+    let d = calculateDiscriminant(array);
     if (d > 0){
         d = Math.sqrt(d);
-        let x1 = (-array[1] + d)/2*array[0];
-        let x2 = (-array[1] - d)/2*array[0];
+        let x1 = (-array[1] + d)/(2*array[0]);
+        let x2 = (-array[1] - d)/(2*array[0]);
         return [x1, x2];
     } else if (d === 0){
-        let x1_2 = (-array[1])/2*array[0];
+        let x1_2 = -array[1]/(2*array[0]);
         return x1_2;
     } else if (d < 0){
         return "This square equation does not have real roots.";
